@@ -42,7 +42,7 @@ body_content = body_tag.contents[1]
 # k = body_content.find_all("div",class_="fw-bold text-primary placeholder")
 # print(k[0])
 
-k = body_content.find_all(string=["+1"])
+k = body_content.find_all(string=True)
 print(k)
 
 # print(body_content)
