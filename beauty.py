@@ -46,7 +46,8 @@ k = body_content.find_all(string=True)
 
 for z in k:
     if z.startswith('+'):
-        print(z)
+        z = z.split("+")
+        print(z[1])
 
 
 
