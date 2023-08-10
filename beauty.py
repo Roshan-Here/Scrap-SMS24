@@ -38,12 +38,17 @@ body_tag = soup.body
 # print(body_tag.contents[1])
 body_content = body_tag.contents[1]
 
-
 # k = body_content.find_all("div",class_="fw-bold text-primary placeholder")
 # print(k[0])
 
 k = body_content.find_all(string=True)
-print(k)
+# print(k)
+
+for z in k:
+    if z.startswith('+'):
+        print(z)
+
+
 
 # print(body_content)
 # for child in body_content:
