@@ -15,7 +15,7 @@ black = soup.prettify()
 # writing into a txt file error handled (encoding using utf-8) 
 # https://stackoverflow.com/questions/51230307/scraping-error-in-python-charmap-codec-cant-encode-character-cant-concat
 
-f = open('beautycheck.txt', 'w',encoding='utf-8')
+#f = open('beautycheck.txt', 'w',encoding='utf-8')
 
 
 # get title (name)
