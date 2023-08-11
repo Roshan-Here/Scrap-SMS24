@@ -27,6 +27,7 @@ j = soup.body
 
 f = j.find_all('span',class_="placeholder text-break") # return complete data as string
 
+array = []
 
 # print(f[0])
 
@@ -38,6 +39,17 @@ f = j.find_all('span',class_="placeholder text-break") # return complete data as
 
 for z in f:
     if z is not None:
-        print(z.string)
+        array.append(z.string)
     else:
         print('#None')
+
+print(array)
+print("Options:Whatsapp | Telegram | Apple | Google")
+choose = str(input("Choose options..."))
+
+for x in array:
+    if choose in x:
+        print(x)
+# else:
+#     print("Not yet ! wait")
+        # fun(repeat)
