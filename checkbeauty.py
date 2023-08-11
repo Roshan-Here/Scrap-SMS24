@@ -19,8 +19,8 @@ j = soup.body
 
 # print(y)
 
-f = j.find_all('span',class_="placeholder text-break")
+f = j.find_all('span',class_="placeholder text-break") # return complete data as string
 
 
-for z in f:
-    print(z.split(""))
+print(f[0])
+
