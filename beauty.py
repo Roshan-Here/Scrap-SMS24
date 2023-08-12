@@ -1,5 +1,10 @@
+'''
+    Grabbing alll latest numbers/country from sms24
+'''
+
 import requests
 from bs4 import BeautifulSoup
+import itertools
 # StackOverFlow
 
 
@@ -38,16 +43,34 @@ body_tag = soup.body
 # print(body_tag.contents[1])
 body_content = body_tag.contents[1]
 
-# k = body_content.find_all("div",class_="fw-bold text-primary placeholder")
-# print(k[0])
+# print(body_content.prettify()) #checking current data
 
-k = body_content.find_all(string=True)
+# k = body_content.find_all("div",class_="fw-bold text-primary placeholder")
+num = body_content.find_all("div",class_="fw-bold text-primary placeholder") #grabbing number 
+cname = body_content.find_all("h5",class_="text-secondary placeholder") #grabbing country name
+
+numarray = []
+cnamearray =[]
+
+for x in num:
+    # print(x.string)
+    numarray.append(x.string)
+
+for y in cname:
+    # print() 
+    cnamearray.append(y.string)
+
+for (x,y) in zip(cnamearray,numarray):
+    print(x,y)
+
+
+# k = body_content.find_all(string=True)
 # print(k)
 
-for z in k:
-    if z.startswith('+'):
-        z = z.split("+")
-        print(z[1])
+# for z in k:
+#     if z.startswith('+'):
+#         z = z.split("+")
+#         print(z[1])
 
 
 

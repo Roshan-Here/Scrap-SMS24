@@ -6,11 +6,16 @@ from time import sleep
 def GetNumberData():
     wow = str(input("enter the number"))
 
+    # if wow.startswith("+"):
+    #     wow = wow.split("+")
+    #     wow = wow[1]
+    #     print(wow)
+
     site =  f"https://sms24.me/en/numbers/{wow}"
 
     try:
         goto = requests.get(site)
-    except SystemError as e:
+    except SystemError as e: # need to add new exeception
         print(e)
     else:
         print("Noot valid number")
