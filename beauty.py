@@ -4,12 +4,16 @@
 
 import requests
 from bs4 import BeautifulSoup
-import itertools
+import itertools #https://www.geeksforgeeks.org/python-iterate-multiple-lists-simultaneously/
 # StackOverFlow
 
 
 # get all data in text format
-wow = requests.get("https://sms24.me/en/numbers")
+wow = requests.get("https://sms24.me/en/countries")
+# wow = requests.get("https://sms24.me/en/countries/in")
+# wow = requests.get("https://sms24.me/en/countries/us")
+# [india,us,australia,austria,belgium,brazil,bulgaria,canada,chile,china,croatia,]
+#[in,us,au,at,be,br,bg,ca,cl,cn,hr,]
 
 # print(wow.text)
 # converting into objects
