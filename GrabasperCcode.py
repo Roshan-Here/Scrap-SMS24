@@ -39,3 +39,4 @@ numz = GrabAllNo(Ask)
 
 print(numz)
 
+# need to move on to Django-SmS24
