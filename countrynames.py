@@ -27,7 +27,7 @@ for z in link:
     code = y.split("/")
     Ccode.append(code[-1])
 
-# print(Ccode)
+print(Ccode)
 
 # print(Cname)
 f = open("beautycheck.txt",'w',encoding='utf-8')
@@ -35,3 +35,6 @@ f = open("beautycheck.txt",'w',encoding='utf-8')
 for z,y in zip(Cname,Ccode):
     print(z,y)
     f.write(f"{z,y}\n")
+
+
+# need to create a fuction which grabs all numbers using Ccode
