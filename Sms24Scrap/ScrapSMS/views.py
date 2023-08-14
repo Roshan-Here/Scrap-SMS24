@@ -38,5 +38,6 @@ def GrabAllNumbers():
 
     print(cnamearray)
 
+# need to setup template
 
 GrabAllNumbers()
