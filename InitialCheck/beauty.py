@@ -9,7 +9,7 @@ import itertools #https://www.geeksforgeeks.org/python-iterate-multiple-lists-si
 
 
 # get all data in text format
-wow = requests.get("https://sms24.me/en/countries")
+wow = requests.get("https://sms24.me/en/numbers")
 # wow = requests.get("https://sms24.me/en/countries/in")
 # wow = requests.get("https://sms24.me/en/countries/us")
 # [india,us,australia,austria,belgium,brazil,bulgaria,canada,chile,china,croatia,]
