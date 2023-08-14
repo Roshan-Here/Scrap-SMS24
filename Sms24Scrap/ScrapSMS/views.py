@@ -1,5 +1,6 @@
 from django.shortcuts import render
-
+import requests
+from bs4 import BeautifulSoup
 # Create your views here. not using any models only views (simple proj)
 
 ''' 
@@ -14,4 +15,28 @@ Function based views
 
 
 def GrabAllNumbers():
-    
+    site = "https://sms24.me/en/numbers"
+    grab = requests.get(site)
+
+    soup = BeautifulSoup(grab.text,'html.parser')
+
+    body_content = soup.body.contents[1]
+    # print(body_content.prettify())
+
+    grbnum = body_content.find_all('div',class_='fw-bold text-primary placeholder') 
+    grabcontry = body_content.find_all('h5',class_='text-secondary placeholder')
+
+    numarry = [(str((x.string).split("+")[1])) for x in grbnum] # figured within one line 
+    '''
+    for x in grbnum:
+        x =(x.string).split("+")
+        print(x)
+    '''
+    cnamearray = [y.string for y in grabcontry]
+
+    print(numarry)
+
+    print(cnamearray)
+
+
+GrabAllNumbers()
