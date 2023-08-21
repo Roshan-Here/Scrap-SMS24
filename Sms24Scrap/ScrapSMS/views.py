@@ -1,7 +1,13 @@
 from django.shortcuts import render
 import requests
 from bs4 import BeautifulSoup
+from django.views.generic.base import TemplateView
 # Create your views here. not using any models only views (simple proj)
+
+class Main(TemplateView):
+    template_name = 'main.html'
+
+
 
 ''' 
 =======================
@@ -40,4 +46,6 @@ def GrabAllNumbers():
 
 # need to setup template
 
-GrabAllNumbers()
+# GrabAllNumbers()
+
+

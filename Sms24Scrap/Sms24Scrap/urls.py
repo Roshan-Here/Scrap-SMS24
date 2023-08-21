@@ -16,9 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from ScrapSMS import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.Main.as_view(),name='main'),
     # path('',), #to show all country name
     path('scrap/',include('ScrapSMS.urls'))   
 ]
