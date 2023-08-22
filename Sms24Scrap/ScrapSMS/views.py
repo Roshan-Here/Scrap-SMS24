@@ -5,7 +5,7 @@ from django.views.generic.base import TemplateView
 # Create your views here. not using any models only views (simple proj)
 
 class Main(TemplateView):
-    template_name = 'ScrapSMS/main.html'
+    template_name = 'ScrapSMS/home.html'
 
 
 
