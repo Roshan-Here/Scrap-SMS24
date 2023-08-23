@@ -8,7 +8,7 @@ SMS Home Page
 
 
 
-{% block home %}
+{% block front %}
 <div class="container-fluid">
     <div class="row g-0 bg-body-secondary position-relative">
       <div class="col-md-3 mb-md-0 p-md-4">
@@ -32,37 +32,12 @@ SMS Home Page
       </div>
     </div>
 </div>
-<p class="text-success text-center h5"><ins><strong>All Numbers</strong></ins></p>
-
-     
-
-
-
 
 <div class="container-fluid">
-
-  <div class="row g-2">
-    {% with ''|center:2 as range %}
-    {% for _ in range %}
-      {% for x,z in vals %}
-      <div class="col-sm-6 mb-3 mb-sm-2">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title text-center text-danger">{{z}}</h5>
-            <p class="card-text h4 text-center">+{{x}}</p>
-            <div class="d-grid justify-content-center align-content-center">
-              <a href="#" class="btn btn-primary">Get Msg...</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-      {% endfor %}
-      {% endwith %}  
-    </div>
+  <div class="embed-responsive embed-responsive-16by3 justify-content-center">
+    <iframe class="embed-responsive-item"  src="https://www.youtube.com/embed/LkjMVZpGqB8"></iframe>
+  </div>
 </div>
 
-
-</div>
 
 {% endblock %}

@@ -19,7 +19,7 @@
     <!-- place navbar here -->
     <nav class="navbar navbar-expand-sm bg-primary">
       <div class="container-fluid">
-      <a class="navbar-brand mb-0 h1" href="#">  
+      <a class="navbar-brand mb-0 h1" href="{% url 'main' %}">  
         <img src="{% static 'images/sms-icon-5476.png' %}" alt="Logo" width="35" height="30" class="d-inline-block align-text-top">
         Sms Scrap</a>
         <!--<a class="navbar-brand" href="#">Navbar</a>-->
@@ -28,7 +28,7 @@
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav me-auto mt-2 mt-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#" aria-current="page">All Numbers <span class="visually-hidden">(current)</span></a>
+                    <a class="nav-link active" href="{% url 'getallnumbers' %}" aria-current="page">All Numbers <span class="visually-hidden">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Countries</a>
@@ -44,6 +44,9 @@
     </nav>
   </header>
   <main>
+    {% block front %}
+    {% endblock %}
+
     {% block home %}
     {% endblock %}
   
