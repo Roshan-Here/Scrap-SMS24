@@ -54,6 +54,7 @@ def GrabAllNumbers(request):
     # ziping both array into one for grabing simply
     values = zip(numarry,cnamearray)
 
+    # https://django.cowhite.com/blog/numeric-for-loop-in-django-templates/
     return render(request,'ScrapSMs/home.html',{"vals":values})
 
 # need to setup template
