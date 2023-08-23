@@ -32,5 +32,31 @@ SMS Home Page
       </div>
     </div>
 </div>
+<p class="text-success text-center h5"><ins><strong>All Numbers</strong></ins></p>
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-sm-6 mb-3 mb-sm-0">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title text-center text-danger">USA</h5>
+          <p class="card-text h4 text-center">+9165237896</p>
+          <div class="d-grid justify-content-center align-content-center">
+            <a href="#" class="btn btn-primary">Get Msg...</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+  {% for x,z in vals %}
+  <h1>{{x}}</h1>
+  <h5>{{z}}</h5>
+  {% endfor %}
+
+</div>
+
+
 
 {% endblock %}

@@ -2,7 +2,14 @@ from django.shortcuts import render
 import requests
 from bs4 import BeautifulSoup
 from django.views.generic.base import TemplateView
+import itertools
 # Create your views here. not using any models only views (simple proj)
+
+''''
+================
+CBV
+================
+'''
 
 class Main(TemplateView):
     template_name = 'ScrapSMS/home.html'
@@ -20,7 +27,7 @@ Function based views
 # 2. need to check country code: then grab all no for that country
 
 
-def GrabAllNumbers():
+def GrabAllNumbers(request):
     site = "https://sms24.me/en/numbers"
     grab = requests.get(site)
 
@@ -43,6 +50,11 @@ def GrabAllNumbers():
     print(numarry)
 
     print(cnamearray)
+
+    # ziping both array into one for grabing simply
+    values = zip(numarry,cnamearray)
+
+    return render(request,'ScrapSMs/home.html',{"vals":values})
 
 # need to setup template
 
