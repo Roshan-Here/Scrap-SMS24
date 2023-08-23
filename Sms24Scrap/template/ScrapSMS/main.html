@@ -34,6 +34,11 @@
                     <a class="nav-link" href="#">Countries</a>
                 </li>
             </ul>
+            <ul class="navbar-nav my-2 my-lg-0">
+              <li class="nav-item">
+                <a class="nav-link top-0 end-0 text-dark fw-bold" href="#modalId" data-bs-toggle="modal" data-bs-target="#modalId">Privacy</a>
+              </li>
+            </ul>
         </div>
       </div>
     </nav>
@@ -41,6 +46,38 @@
   <main>
     {% block home %}
     {% endblock %}
+  
+
+        <!-- Modal -->
+        <div class="modal fade" id="modalId" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+          <div class="modal-dialog p-md-4" role="document">
+            <div class="modal-content fixed-bottom bg-danger">
+                <div class="modal-header">
+                    <p class="modal-title h4" id="modalTitleId">Only for Educational purpose | Privacy issue</p>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+              <div class="modal-body">
+                <p class="h6">It just grab details and provide it, just made is add-free by scrapping that's all... feel free to <a class="text-info" href="https://github.com/Roshan-Here">Collaborate</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <script>
+          var modalId = document.getElementById('modalId');
+        
+          modalId.addEventListener('show.bs.modal', function (event) {
+              // Button that triggered the modal
+              let button = event.relatedTarget;
+              // Extract info from data-bs-* attributes
+              let recipient = button.getAttribute('data-bs-whatever');
+        
+            // Use above variables to manipulate the DOM
+          });
+        </script>
+
+
+
   </main>
   <footer>
     <!-- place footer here -->
@@ -48,7 +85,7 @@
       <div class="card">
         <div class="bg-info card-body">
         <div class="position-absolute top-50 start-50 translate-middle">
-          <a class="link-danger link-underscore-opacity-" href="">
+          <a class="link-danger link-underscore-opacity" href="">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-c-square" viewBox="0 0 16 16">
               <path d="M8.146 4.992c-1.212 0-1.927.92-1.927 2.502v1.06c0 1.571.703 2.462 1.927 2.462.979 0 1.641-.586 1.729-1.418h1.295v.093c-.1 1.448-1.354 2.467-3.03 2.467-2.091 0-3.269-1.336-3.269-3.603V7.482c0-2.261 1.201-3.638 3.27-3.638 1.681 0 2.935 1.054 3.029 2.572v.088H9.875c-.088-.879-.768-1.512-1.729-1.512Z"/>
               <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2Zm15 0a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2Z"/>
