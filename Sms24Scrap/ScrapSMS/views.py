@@ -39,7 +39,7 @@ def GrabAllNumbers(request):
     grbnum = body_content.find_all('div',class_='fw-bold text-primary placeholder') 
     grabcontry = body_content.find_all('h5',class_='text-secondary placeholder')
 
-    numarry = [(str((x.string).split("+")[1])) for x in grbnum] # figured within one line 
+    numarry = [int((str(x.string).split("+")[1])) for x in grbnum] # figured within one line 
     '''
     for x in grbnum:
         x =(x.string).split("+")
