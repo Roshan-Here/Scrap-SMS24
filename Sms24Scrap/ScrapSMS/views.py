@@ -62,3 +62,23 @@ def GrabAllNumbers(request):
 # GrabAllNumbers()
 
 
+def GetNumberData(request,num):
+    num = str(num)
+    site = f"https://sms24.me/en/numbers/{num}"
+    grab = requests.get(site)
+    soup = BeautifulSoup(grab.text,'html.parser')
+    body_content = soup.body.contents[1]
+
+    datatitle = body_content.find_all('a',class_="placeholder ms-1")
+    numdatas = body_content.find_all('span',class_="placeholder text-break")
+    
+    titlearry = [(str(k.string)) for k in datatitle]
+    numarry = [(str(x.string)) for x in numdatas]
+
+    print(numarry,titlearry)
+
+    data = zip(titlearry,numarry)
+
+    return render(request,'',{"dataz":data,"phnum":num})
+
+GetNumberData()

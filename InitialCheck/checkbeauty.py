@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 from time import sleep
-
+import itertools
 
 def GetNumberData():
     wow = str(input("enter the number"))
@@ -28,13 +28,17 @@ def GetNumberData():
     # print(soup.body)
     j = soup.body
 
-    # y = j.prettify()
+    y = j.prettify()
 
-    # print(y)
+    print(y)
 
     f = j.find_all('span',class_="placeholder text-break") # return complete data as string
-    global array
-    array = []
+    # placeholder ms-1
+    k = j.find_all('a',class_='placeholder ms-1')
+
+    global dataarray,titlearray
+    dataarray = []
+    titlearray = []
 
     # print(f[0])
 
@@ -44,27 +48,29 @@ def GetNumberData():
     # print(span_string)
 
 
-    for z in f:
+    for z,y in zip(f,k):
         if z is not None:
-            array.append(z.string)
+            dataarray.append(z.string)
+            titlearray.append(y.string)
         else:
             print('#None')
 
-    print(array)
+    print(dataarray)
+    print(titlearray)
     print("Options:Whatsapp | Telegram | Apple | Google")
     choose = str(input("Choose options..."))
 
-    for x in array:
+    for x in dataarray:
         if choose in x:
             print(x)
     else:
         print("Not yet ! wait")
-        Recheck(array)
+        Recheck(dataarray)
 
 
 
 def Recheck(incomming):
-    while array != incomming:
+    while dataarray != incomming:
         GetNumberData()
     else:
         TSec = str(input("No new datas, wanna wait for 30sec to grab new datas (Y/S)?"))
