@@ -79,6 +79,6 @@ def GetNumberData(request,num):
 
     data = zip(titlearry,numarry)
 
-    return render(request,'',{"dataz":data,"phnum":num})
+    return render(request,'ScrapSMs/numdatas.html',{"dataz":data,"phnum":num})
 
-GetNumberData()
+# GetNumberData()
