@@ -35,6 +35,9 @@ def GetNumberData():
     f = j.find_all('span',class_="placeholder text-break") # return complete data as string
     # placeholder ms-1
     k = j.find_all('a',class_='placeholder ms-1')
+    i = j.find('h2',class_='text-secondary d-block placeholder')
+
+
 
     global dataarray,titlearray
     dataarray = []
@@ -57,6 +60,7 @@ def GetNumberData():
 
     print(dataarray)
     print(titlearray)
+    print(i.string)
     print("Options:Whatsapp | Telegram | Apple | Google")
     choose = str(input("Choose options..."))
 

@@ -14,6 +14,7 @@ Scrapped {{phnum}} Datas
     <div class="col-md-4 mb-md-2 p-md-4">
       <!-- grabed the image from Arcan official website-->
       <img src="{% static 'images/Jinx.jpg' %}" class="w-100" alt="...">
+        <p class="h3 text-secondary"> {{cname}}</p>
       <div class="d-grid justify-content-center">
         <p class="h3 text-primary">+{{phnum}}</p>
         <a href="{% url 'grabnumbdetails' num=phnum %}" class="btn btn-outline-primary btn-dark">Reload...</a>

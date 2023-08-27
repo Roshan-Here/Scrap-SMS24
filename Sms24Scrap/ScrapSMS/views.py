@@ -71,7 +71,9 @@ def GetNumberData(request,num):
 
     datatitle = body_content.find_all('a',class_="placeholder ms-1")
     numdatas = body_content.find_all('span',class_="placeholder text-break")
-    
+    Cname = body_content.find('h2',class_='text-secondary d-block placeholder')
+    Cname = Cname.string
+
     titlearry = [(str(k.string)) for k in datatitle]
     numarry = [(str(x.string)) for x in numdatas]
 
@@ -79,6 +81,6 @@ def GetNumberData(request,num):
 
     data = zip(titlearry,numarry)
 
-    return render(request,'ScrapSMs/numdatas.html',{"dataz":data,"phnum":num})
+    return render(request,'ScrapSMs/numdatas.html',{"dataz":data,"phnum":num,"cname":Cname})
 
 # GetNumberData()
