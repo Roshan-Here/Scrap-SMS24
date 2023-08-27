@@ -1,4 +1,6 @@
 {% extends 'ScrapSMS/main.html' %}
+{% load static %}
+
 
 {% block titlee %}
 Scrapped {{phnum}} Datas
@@ -6,19 +8,29 @@ Scrapped {{phnum}} Datas
 
 {% block front %}
 
-<h5>helloo...</h5>
+
+<div class="container-fluid">
+  <div class="row g-0 position-relative justify-content-center">
+    <div class="col-md-4 mb-md-2 p-md-4">
+      <!-- grabed the image from Arcan official website-->
+      <img src="{% static 'images/Jinx.jpg' %}" class="w-100" alt="...">
+      <div class="d-grid justify-content-center">
+        <p class="h3 text-primary">+{{phnum}}</p>
+        <a href="{% url 'grabnumbdetails' num=phnum %}" class="btn btn-outline-primary btn-dark">Reload...</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <div class="container-fluid">
   <div class="row g-2">
     {% for x,z in dataz %}
-    <div class="col-sm-6 mb-3 mb-sm-2">
-      <div class="card">
+    <div class="col-sm-12 mb-lg-2 mb-sm-12">
+      <div class="card border-info">
         <div class="card-body">
-          <h5 class="card-title text-center text-danger">{{z}}</h5>
-          <p class="card-text h4 text-center">+{{x}}</p>
-          <div class="d-grid justify-content-center align-content-center">
-            <a href="{% url 'grabnumbdetails' num=x %}" class="btn btn-primary">Get Msg...</a>
-          </div>
+          <h5 class="card-title text-center text-danger">{{x}}</h5>
+          <p class="card-text h4">{{z}}</p>
         </div>
       </div>
     </div>
