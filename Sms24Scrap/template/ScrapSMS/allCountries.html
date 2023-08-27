@@ -25,13 +25,13 @@
     <div class="row g-2">
       {% for x,z in dataz %}
       <div class="col-sm-4 mb-lg-2 mb-sm-12">
-        <a href="{% url 'getallnumbers' %}">
+        <a href="{% url 'selectedcontries' code=x %}">
         <div class="card border-info">
             <!-- <a href="{% url 'getallnumbers' %}"><img src="{% static 'images/flags4-3/{x}.svg' %}" class="card-img-top" alt="..."> -->
             <div class="card-body">
                 <p class="h3 card-title text-center text-danger"> {{z}}</p>
                 <div class="text-center">
-                    <a href="{% url 'getallnumbers' %}"><span class="fi fi-{{x}} fs-1"></span></a>
+                    <span class="fi fi-{{x}} fs-1"></span>
                 </div>
             <!--<p class="card-text h4">{{z}}</p>-->
             </div>

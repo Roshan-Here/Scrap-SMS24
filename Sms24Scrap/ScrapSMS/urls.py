@@ -7,5 +7,6 @@ urlpatterns = [
     # path('<slug>/',) # to show all country code numbers
     path('',views.GrabAllNumbers,name="getallnumbers"), 
     path('numbers/<int:num>',views.GetNumberData,name="grabnumbdetails"),
-    path('countries',views.GrabCountryNames,name='grabcountries')
+    path('countries',views.GrabCountryNames,name='grabcountries'),
+    path('contries/<slug:code>',views.GrabAllNumbers,name="selectedcontries")
 ]
