@@ -1,6 +1,13 @@
 <h2 align="center">Scrap SMS24</h2>
 
 <h3 align="center">Clonned <a href="https://sms24.me/en/">SMS24</a> Using Django and Beautiful Soup</h3>
+<h3 align="center">Hosted on <a href="https://www.pythonanywhere.com/">Pythonanywhere.com</a> : <a href="https://roshan0mown.pythonanywhere.com/">Link</a></h2>
+
+```console
+There's an issue with hosted site(pythonanywhere.com) they has been blacklisted sms24.me
+so can't fetch the detail accordingly.Run Manually or use other platforms to host.
+```
+
 
 <h4 align="center">Same featues without Adds (add-free)</h4>
 
@@ -20,7 +27,7 @@
 <p align="center">Create Virtual Environment</p>
 
 ```console
-leosarchlinux@arch:~$ python -m bs4
+leosarchlinux@arch:~$ python -m venv bs4
 leosarchlinux@arch:~$ git clone https://github.com/Roshan-Here/Scrap-SMS24
 leosarchlinux@arch:~$ .\bs4\Scripts\activate
 leosarchlinux@arch:~$ cd Sms24Scrap
