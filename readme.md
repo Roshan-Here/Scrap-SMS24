@@ -21,7 +21,7 @@
 
 ```console
 leosarchlinux@arch:~$ python -m bs4
-leosarchlinux@arch:~$ git clone https://github.com/Roshan-Here/XhatGpt
+leosarchlinux@arch:~$ git clone https://github.com/Roshan-Here/Scrap-SMS24
 leosarchlinux@arch:~$ .\bs4\Scripts\activate
 leosarchlinux@arch:~$ cd Sms24Scrap
 leosarchlinux@arch:~$ pip3 install -U -r requirements.txt
@@ -35,4 +35,4 @@ leosarchlinux@arch:~$ python3 manage.py runserver
 <img src="SampleWorking/Screenshot 4.png" alt="" srcset="">
 <img src="SampleWorking/Screenshot 5.png" alt="" srcset="">
 
-<h3 style="margin-top:4%"><a href="https://github.com/Roshan-Here/XhatGpt/blob/main/LICENSE">MIT License</a></h3>
+<h3 style="margin-top:4%"><a href="https://github.com/Roshan-Here/Scrap-SMS24/blob/main/LICENSE">MIT License</a></h3>
