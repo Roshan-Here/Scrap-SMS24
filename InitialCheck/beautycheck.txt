@@ -23,7 +23,6 @@
 ('Kazakhstan', 'kz')
 ('Latvia', 'lv')
 ('Lithuania', 'lt')
-('Macao', 'mo')
 ('Malaysia', 'my')
 ('Mexico', 'mx')
 ('Netherlands', 'nl')
@@ -40,4 +39,5 @@
 ('Ukraine', 'ua')
 ('United Kingdom', 'gb')
 ('United States', 'us')
+('Uzbekistan', 'uz')
 ('Vietnam', 'vn')

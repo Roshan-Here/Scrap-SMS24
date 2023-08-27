@@ -86,6 +86,17 @@ def GetNumberData(request,num):
 
 # GetNumberData()
 
-def GrabCountryNames():
+def GrabCountryNames(request):
     site = "https://sms24.me/en/countries"
     body_content = bodycontent(site)
+
+    link = body_content.find_all('a')
+
+    # grabbed country code
+    Cname = [(y.text) for y in link]
+    Ccode = [(x.get("href")).split('/')[-1] for x in link]
+    print(Ccode,Cname)
+    dataz = zip(Ccode,Cname)
+
+    return render(request,"ScrapSMS/allCountries.html", {"dataz":dataz})
+# GrabCountryNames()

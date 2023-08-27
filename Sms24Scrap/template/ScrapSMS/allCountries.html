@@ -15,15 +15,32 @@
         <!-- grabed the image from Arcan official website-->
         <img src="{% static 'images/Jinx.jpg' %}" class="w-100" alt="...">
         <div class="d-grid justify-content-center">
-          <p class="h3 text-primary">+{{ALL Countries}}</p>
+          <p class="h3 text-primary">All Countries</p>
         </div>
       </div>
     </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row g-2">
+      {% for x,z in dataz %}
+      <div class="col-sm-4 mb-lg-2 mb-sm-12">
+        <a href="{% url 'getallnumbers' %}">
+        <div class="card border-info">
+            <!-- <a href="{% url 'getallnumbers' %}"><img src="{% static 'images/flags4-3/{x}.svg' %}" class="card-img-top" alt="..."> -->
+            <div class="card-body">
+                <p class="h3 card-title text-center text-danger"> {{z}}</p>
+                <div class="text-center">
+                    <a href="{% url 'getallnumbers' %}"><span class="fi fi-{{x}} fs-1"></span></a>
+                </div>
+            <!--<p class="card-text h4">{{z}}</p>-->
+            </div>
+        </div>
+        </a>
+      </div>
+      {% endfor %}
   </div>
-
-
-
-
+</div>
 
 
 
