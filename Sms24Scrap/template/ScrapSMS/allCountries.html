@@ -1,12 +1,25 @@
 {% extends "ScrapSMS/main.html" %}
 
+{% load static %}
+
 {% block title %}Countries List | SMS scrap{% endblock %}
 
-{% block home %}
+{% block front %}
 
 
 
 
+<div class="container-fluid">
+    <div class="row g-0 position-relative justify-content-center">
+      <div class="col-md-4 mb-md-2 p-md-4">
+        <!-- grabed the image from Arcan official website-->
+        <img src="{% static 'images/Jinx.jpg' %}" class="w-100" alt="...">
+        <div class="d-grid justify-content-center">
+          <p class="h3 text-primary">+{{ALL Countries}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 

@@ -26,14 +26,17 @@ Function based views
 # 2. need to get country no: check country | then grab all datas for that no
 # 2. need to check country code: then grab all no for that country
 
+#avoiding repetation
+def bodycontent(site):
+    grab = requests.get(site)
+    soup = BeautifulSoup(grab.text,'html.parser')
+    body_content = soup.body.contents[1]
+    return body_content
+
 
 def GrabAllNumbers(request):
     site = "https://sms24.me/en/numbers"
-    grab = requests.get(site)
-
-    soup = BeautifulSoup(grab.text,'html.parser')
-
-    body_content = soup.body.contents[1]
+    body_content = bodycontent(site)
     # print(body_content.prettify())
 
     grbnum = body_content.find_all('div',class_='fw-bold text-primary placeholder') 
@@ -65,9 +68,7 @@ def GrabAllNumbers(request):
 def GetNumberData(request,num):
     num = str(num)
     site = f"https://sms24.me/en/numbers/{num}"
-    grab = requests.get(site)
-    soup = BeautifulSoup(grab.text,'html.parser')
-    body_content = soup.body.contents[1]
+    body_content = bodycontent(site)
 
     datatitle = body_content.find_all('a',class_="placeholder ms-1")
     numdatas = body_content.find_all('span',class_="placeholder text-break")
@@ -84,3 +85,7 @@ def GetNumberData(request,num):
     return render(request,'ScrapSMs/numdatas.html',{"dataz":data,"phnum":num,"cname":Cname})
 
 # GetNumberData()
+
+def GrabCountryNames():
+    site = "https://sms24.me/en/countries"
+    body_content = bodycontent(site)
